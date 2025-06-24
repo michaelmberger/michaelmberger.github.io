@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D&D Character Sheet</title>
+  <title>Character Sheet for Arena by Nathan Sommerville</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @media print {
@@ -21,22 +21,26 @@
   <div class="max-w-5xl mx-auto bg-white shadow-lg rounded-xl p-8 space-y-8">
     
     <!-- Character Info -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
       <div>
         <label class="block text-sm font-semibold">Character Name</label>
         <input type="text" class="mt-1 w-full border rounded px-3 py-2" placeholder="Elandra Stormwind" />
       </div>
       <div>
-        <label class="block text-sm font-semibold">Class & Level</label>
-        <input type="text" class="mt-1 w-full border rounded px-3 py-2" placeholder="Wizard 5" />
+        <label class="block text-sm font-semibold">Class</label>
+        <input type="text" class="mt-1 w-full border rounded px-3 py-2" placeholder="Wizard" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">Level</label>
+        <input type="number" class="mt-1 w-full border rounded px-3 py-2" placeholder="0" />
       </div>
       <div>
         <label class="block text-sm font-semibold">Race</label>
         <input type="text" class="mt-1 w-full border rounded px-3 py-2" placeholder="Elf" />
       </div>
       <div>
-        <label class="block text-sm font-semibold">Background</label>
-        <input type="text" class="mt-1 w-full border rounded px-3 py-2" placeholder="Sage" />
+        <label class="block text-sm font-semibold">Secondary Race</label>
+        <input type="text" class="mt-1 w-full border rounded px-3 py-2" placeholder="Elf" />
       </div>
     </div>
 
@@ -44,47 +48,46 @@
     <div class="grid grid-cols-6 gap-4 text-center">
       <div class="bg-gray-50 p-4 rounded-lg shadow">
         <h3 class="font-bold">STR</h3>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="10" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="10" />
       </div>
       <div class="bg-gray-50 p-4 rounded-lg shadow">
         <h3 class="font-bold">DEX</h3>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="14" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="14" />
       </div>
       <div class="bg-gray-50 p-4 rounded-lg shadow">
         <h3 class="font-bold">CON</h3>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="12" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="12" />
       </div>
       <div class="bg-gray-50 p-4 rounded-lg shadow">
         <h3 class="font-bold">INT</h3>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="18" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="18" />
       </div>
       <div class="bg-gray-50 p-4 rounded-lg shadow">
         <h3 class="font-bold">WIS</h3>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="13" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="13" />
       </div>
       <div class="bg-gray-50 p-4 rounded-lg shadow">
         <h3 class="font-bold">CHA</h3>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="8" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="8" />
       </div>
     </div>
 
-    <!-- Core Stats -->
     <div class="grid grid-cols-4 gap-4">
       <div class="bg-gray-50 p-4 rounded-lg shadow text-center">
         <h4 class="font-bold">Armor Class</h4>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="15" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="15" />
       </div>
       <div class="bg-gray-50 p-4 rounded-lg shadow text-center">
         <h4 class="font-bold">Initiative</h4>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="+2" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="+2" />
       </div>
       <div class="bg-gray-50 p-4 rounded-lg shadow text-center">
         <h4 class="font-bold">Speed</h4>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="30" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="30" />
       </div>
       <div class="bg-gray-50 p-4 rounded-lg shadow text-center">
         <h4 class="font-bold">Hit Points</h4>
-        <input type="number" class="mt-2 w-full border rounded text-center" value="24" />
+        <input type="number" disabled class="mt-2 w-full border rounded text-center" value="24" />
       </div>
     </div>
 
