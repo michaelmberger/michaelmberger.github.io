@@ -15,7 +15,6 @@ menuButton.addEventListener('click', () => {
     menuClose.classList.toggle('hidden');
 });
 
-// Set initial icon
 function setDarkModeIcon() {
     const isDark = htmlEl.classList.contains('dark');
     sunIcon.classList.toggle('hidden', !isDark);
