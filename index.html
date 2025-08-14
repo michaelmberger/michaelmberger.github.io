@@ -1,16 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta
-      name="facebook-domain-verification"
-      content="we2ojcnd56z61rnbr7elwcvhdiunno"
-    />
-    <title>Michael Berger</title>
-  </head>
-  <body>
-    <h1>Resume</h1>
-    <a href="./resume.html">My Resume</a>
-    <h1>Demo Projects</h1>
-    <a href="./Arena/CharacterSheet.html">Arena Game Character Sheet</a>
-  </body>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Homepage</title>
+  <script src="./assets/lib.js" type="module"></script>
+  <link rel="stylesheet" href="./assets/index.css">
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 dark:bg-gray-950">
+    <div class="flex justify-between h-16 items-center px-3">
+      <!-- Branding -->
+      <div class="flex space-x-4">
+        <span class="text-white text-xl font-bold">My Homepage</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-4 items-center gap-5">
+        <button data-section="introduction"
+          class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Introduction</button>
+        <button data-section="resume"
+          class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Resume</button>
+        <button data-section="projects"
+          class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Projects</button>
+        <button data-section="business"
+          class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Business Plans</button>
+      </div>
+
+      <!-- Right Controls: Toggle + Menu -->
+      <div class="flex space-x-4 md:space-x-2">
+        <!-- Dark Mode Toggle -->
+        <button id="darkToggle" class="text-gray-300 hover:text-white focus:outline-none" title="Toggle Dark Mode">
+          <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+            <use href="./assets/icons.svg#sunIcon" fill="currentColor"></use>
+          </svg>
+
+          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+            <use href="./assets/icons.svg#moonIcon" fill="currentColor"></use>
+          </svg>
+        </button>
+
+        <!-- Mobile menu toggle -->
+        <button id="menu-button" class="text-gray-300 hover:text-white focus:outline-none md:hidden">
+          <svg id="menu-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1 bg-gray-800 dark:bg-gray-950">
+      <a href="#introduction"
+        class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Introduction</a>
+      <a href="#resume" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Resume</a>
+      <a href="#projects" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Projects</a>
+      <a href="#business" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Business
+        Plans</a>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main>
+    <section id="introduction" class="page-section">
+      <h1 class="text-3xl font-bold mb-2">Introduction</h1>
+      <p>This is the introduction section of the homepage.</p>
+    </section>
+
+    <section id="resume" class="page-section hidden">
+      <h1 class="text-3xl font-bold mb-2">Resume</h1>
+      <p>Details about my work and education history.</p>
+    </section>
+
+    <section id="projects" class="page-section hidden">
+      <h1 class="text-3xl font-bold mb-2">Projects</h1>
+      <p>Information on my projects.</p>
+    </section>
+
+    <section id="business" class="page-section hidden">
+      <h1 class="text-3xl font-bold mb-2">Business Plans</h1>
+      <p>Business ideas and strategies I've developed.</p>
+    </section>
+  </main>
+</body>
+
 </html>
