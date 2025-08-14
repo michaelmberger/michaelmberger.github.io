@@ -65,12 +65,10 @@
     <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1 bg-gray-800 dark:bg-gray-950">
       <a href="#introduction"
         class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Introduction</a>
-      <a href="#resume"
-        class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Resume</a>
-      <a href="#projects"
-        class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Projects</a>
-      <a href="#business"
-        class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Business Plans</a>
+      <a href="#resume" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Resume</a>
+      <a href="#projects" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Projects</a>
+      <a href="#business" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Business
+        Plans</a>
     </div>
   </nav>
 
@@ -96,59 +94,6 @@
       <p>Business ideas and strategies I've developed.</p>
     </section>
   </main>
-
-  <!-- 
-  <script>
-    const menuButton = document.getElementById('menu-button');
-    const menuOpen = document.getElementById('menu-open');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuOpen.classList.toggle('hidden');
-      menuClose.classList.toggle('hidden');
-    });
-
-    const darkToggle = document.getElementById('darkToggle');
-    const htmlEl = document.documentElement;
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-
-    // Set initial icon
-    function setDarkModeIcon() {
-      const isDark = htmlEl.classList.contains('dark');
-      sunIcon.classList.toggle('hidden', !isDark);
-      moonIcon.classList.toggle('hidden', isDark);
-    }
-
-    setDarkModeIcon();
-
-    darkToggle.addEventListener('click', () => {
-      htmlEl.classList.toggle('dark');
-      setDarkModeIcon();
-    });
-
-    const navButtons = document.querySelectorAll('.nav-btn');
-    const sections = document.querySelectorAll('.page-section');
-
-    navButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const sectionId = btn.getAttribute('data-section');
-        sections.forEach(section => {
-          section.classList.toggle('hidden', section.id !== sectionId);
-        });
-
-        // If on mobile, close menu after click
-        if (!mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          menuOpen.classList.remove('hidden');
-          menuClose.classList.add('hidden');
-        }
-      });
-    });
-  </script> -->
-
 </body>
 
 </html>
