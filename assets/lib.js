@@ -8,6 +8,7 @@ const darkToggle = document.getElementById('darkToggle');
 const htmlEl = document.documentElement;
 const sunIcon = document.getElementById('sunIcon');
 const moonIcon = document.getElementById('moonIcon');
+const resumeFile = "resume.html";
 
 menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
@@ -20,7 +21,29 @@ function setDarkModeIcon() {
     sunIcon.classList.toggle('hidden', !isDark);
     moonIcon.classList.toggle('hidden', isDark);
 }
-
+function populateSections() {
+    sections.forEach(section => {
+        if (section.id == 'introduction') return;
+        if (section.id == 'resume') {
+            populateSection(section, resumeFile)
+        }
+    })
+}
+function populateSection(section, fileName) {
+    fetch(new Request(fileName))
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error ${response.status}`)
+            }
+            return response.text()
+        })
+        .then((text) => {
+            section.getElementsByTagName('p')[0].innerHTML = text
+        })
+        .catch((error) => {
+            console.log(error.message)
+        })
+}
 darkToggle.addEventListener('click', () => {
     htmlEl.classList.toggle('dark');
     setDarkModeIcon();
@@ -43,3 +66,4 @@ navButtons.forEach(btn => {
 });
 
 setDarkModeIcon();
+populateSections();
