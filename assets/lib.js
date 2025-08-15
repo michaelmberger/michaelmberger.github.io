@@ -8,7 +8,9 @@ const darkToggle = document.getElementById('darkToggle');
 const htmlEl = document.documentElement;
 const sunIcon = document.getElementById('sunIcon');
 const moonIcon = document.getElementById('moonIcon');
-const resumeFile = "resume.html";
+const resumeFile = "content/resume.html";
+const projectFile = "content/projects.html"
+const businessFile = "content/business.html"
 
 menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
@@ -25,7 +27,13 @@ function populateSections() {
     sections.forEach(section => {
         if (section.id == 'introduction') return;
         if (section.id == 'resume') {
-            populateSection(section, resumeFile)
+            populateSection(section, resumeFile);
+        }
+        if (section.id == 'projects') {
+            populateSection(section, projectFile);
+        }
+        if (section.id == 'business') {
+            populateSection(section, businessFile);
         }
     })
 }
@@ -33,15 +41,15 @@ function populateSection(section, fileName) {
     fetch(new Request(fileName))
         .then((response) => {
             if (!response.ok) {
-                throw new Error(`HTTP error ${response.status}`)
+                throw new Error(`HTTP error ${response.status}`);
             }
-            return response.text()
+            return response.text();
         })
         .then((text) => {
-            section.getElementsByTagName('p')[0].innerHTML = text
+            section.getElementsByTagName('p')[0].innerHTML = text;
         })
         .catch((error) => {
-            console.log(error.message)
+            console.log(error.message);
         })
 }
 darkToggle.addEventListener('click', () => {
