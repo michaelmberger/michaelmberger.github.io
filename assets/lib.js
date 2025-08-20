@@ -8,6 +8,9 @@ const darkToggle = document.getElementById('darkToggle');
 const htmlEl = document.documentElement;
 const sunIcon = document.getElementById('sunIcon');
 const moonIcon = document.getElementById('moonIcon');
+const resumeFile = "content/resume.html";
+const projectFile = "content/projects.html"
+const businessFile = "content/business.html"
 
 menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
@@ -20,7 +23,35 @@ function setDarkModeIcon() {
     sunIcon.classList.toggle('hidden', !isDark);
     moonIcon.classList.toggle('hidden', isDark);
 }
-
+function populateSections() {
+    sections.forEach(section => {
+        if (section.id == 'introduction') return;
+        if (section.id == 'resume') {
+            populateSection(section, resumeFile);
+        }
+        if (section.id == 'projects') {
+            populateSection(section, projectFile);
+        }
+        if (section.id == 'business') {
+            populateSection(section, businessFile);
+        }
+    })
+}
+function populateSection(section, fileName) {
+    fetch(new Request(fileName))
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error, status = ${response.status}`);
+            }
+            return response.text();
+        })
+        .then((text) => {
+            section.getElementsByTagName('p')[0].innerHTML = text;
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
+}
 darkToggle.addEventListener('click', () => {
     htmlEl.classList.toggle('dark');
     setDarkModeIcon();
@@ -29,6 +60,12 @@ darkToggle.addEventListener('click', () => {
 navButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         const sectionId = btn.getAttribute('data-section');
+        navButtons.forEach((navButton) => {
+            if (navButton.getAttribute('data-section') != sectionId) {
+                navButton.classList.remove('text-white');
+            }
+        })
+        btn.classList.add('text-white');
         sections.forEach(section => {
             section.classList.toggle('hidden', section.id !== sectionId);
         });
@@ -43,3 +80,4 @@ navButtons.forEach(btn => {
 });
 
 setDarkModeIcon();
+populateSections();

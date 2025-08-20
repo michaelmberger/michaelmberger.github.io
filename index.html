@@ -1,94 +1,102 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Homepage</title>
-  <script src="./assets/lib.js" type="module"></script>
-  <link rel="stylesheet" href="./assets/index.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Berger</title>
+    <script src="./assets/lib.js" type="module"></script>
+    <link rel="stylesheet" href="./assets/index.css">
+  </head>
 
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-  <!-- Navbar -->
-  <nav class="bg-gray-800 dark:bg-gray-950">
-    <div class="flex justify-between h-16 items-center px-3">
-      <!-- Branding -->
-      <div class="flex space-x-4">
-        <span class="text-white text-xl font-bold">My Homepage</span>
+    <!-- Navbar -->
+    <nav class="bg-gray-800 dark:bg-gray-950">
+      <div class="flex justify-between h-16 items-center px-3">
+        <!-- Branding -->
+        <div class="flex space-x-4">
+          <span class="text-white text-xl font-bold"><a href="https://michaelmberger.github.io/">Home</a></span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-4 items-center gap-5">
+          <button data-section="introduction" class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Introduction</button>
+          <button data-section="resume" class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Resume</button>
+          <button data-section="projects" class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Projects</button>
+          <button data-section="business" class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Business Plans</button>
+        </div>
+
+        <!-- Right Controls: Toggle + Menu -->
+        <div class="flex space-x-4 md:space-x-2">
+          <!-- Dark Mode Toggle -->
+          <button id="darkToggle" class="text-gray-300 hover:text-white focus:outline-none" title="Toggle Dark Mode">
+            <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <use href="./assets/icons.svg#sunIcon" fill="currentColor"></use>
+            </svg>
+
+            <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <use href="./assets/icons.svg#moonIcon" fill="currentColor"></use>
+            </svg>
+          </button>
+
+          <!-- Mobile menu toggle -->
+          <button id="menu-button" class="text-gray-300 hover:text-white focus:outline-none md:hidden">
+            <svg id="menu-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex space-x-4 items-center gap-5">
-        <button data-section="introduction"
-          class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Introduction</button>
-        <button data-section="resume"
-          class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Resume</button>
-        <button data-section="projects"
-          class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Projects</button>
-        <button data-section="business"
-          class="nav-btn text-gray-300 hover:text-white py-2 text-base font-medium">Business Plans</button>
+      <!-- Mobile Nav Menu -->
+      <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1 bg-gray-800 dark:bg-gray-950">
+        <a href="#introduction" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Introduction</a>
+        <a href="#resume" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Resume</a>
+        <a href="#projects" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Projects</a>
+        <a href="#business" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Business Plans</a>
       </div>
+    </nav>
 
-      <!-- Right Controls: Toggle + Menu -->
-      <div class="flex space-x-4 md:space-x-2">
-        <!-- Dark Mode Toggle -->
-        <button id="darkToggle" class="text-gray-300 hover:text-white focus:outline-none" title="Toggle Dark Mode">
-          <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-            <use href="./assets/icons.svg#sunIcon" fill="currentColor"></use>
-          </svg>
+    <!-- Page Content -->
+    <main>
+      <section id="introduction" class="page-section m-auto md:w-2/3">
+        <div class="size-100 float-right"><img src="assets/per_image.jpg"></div>
+        <div>
+          <p class="p-3">I'm Michael Berger, a Senior Full Stack Developer with over 22 years in the IT industry - 14 of those focused on software development
+            across
+            industries like process engineering, healthcare, and service delivery. My work blends deep technical expertise with a strong grasp of business
+            processes, allowing me to build solutions that are both robust and impactful.
+          </p>
+          <p class="p-3">
+            From designing pension and career transition systems for Veterans Affairs Canada, to developing healthcare drug information platforms, to
+            architecting
+            full-stack web applications, I thrive on solving complex problems and delivering high-quality, maintainable software. My technical toolkit spans
+            Java,
+            SQL, PHP, C#, TypeScript, and modern frameworks like Angular and Tailwind CSS, along with cloud and DevOps practices in Azure.
+          </p>
+          <p class="p-3">
+            I'm driven by continuous learning, whether that's refining agile methodologies, optimizing microservices, or exploring the latest in CRM and Power
+            Platform development - and I'm always looking for opportunities to make technology work smarter for people.
+          </p>
+        </div>
+      </section>
 
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-            <use href="./assets/icons.svg#moonIcon" fill="currentColor"></use>
-          </svg>
-        </button>
+      <section id="resume" class="page-section hidden">
+        <p class="m-auto md:w-2/3">If you are seeing this you have js disabled.</p>
+      </section>
 
-        <!-- Mobile menu toggle -->
-        <button id="menu-button" class="text-gray-300 hover:text-white focus:outline-none md:hidden">
-          <svg id="menu-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="menu-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
+      <section id="projects" class="page-section hidden">
+        <p class="m-auto md:w-2/3">If you are seeing this you have js disabled.</p>
+      </section>
 
-    <!-- Mobile Nav Menu -->
-    <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1 bg-gray-800 dark:bg-gray-950">
-      <a href="#introduction"
-        class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Introduction</a>
-      <a href="#resume" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Resume</a>
-      <a href="#projects" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Projects</a>
-      <a href="#business" class="block text-gray-300 hover:text-white px-3 py-2 text-base font-medium">Business
-        Plans</a>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <main>
-    <section id="introduction" class="page-section">
-      <h1 class="text-3xl font-bold mb-2">Introduction</h1>
-      <p>This is the introduction section of the homepage.</p>
-    </section>
-
-    <section id="resume" class="page-section hidden">
-      <h1 class="text-3xl font-bold mb-2">Resume</h1>
-      <p>Details about my work and education history.</p>
-    </section>
-
-    <section id="projects" class="page-section hidden">
-      <h1 class="text-3xl font-bold mb-2">Projects</h1>
-      <p>Information on my projects.</p>
-    </section>
-
-    <section id="business" class="page-section hidden">
-      <h1 class="text-3xl font-bold mb-2">Business Plans</h1>
-      <p>Business ideas and strategies I've developed.</p>
-    </section>
-  </main>
-</body>
+      <section id="business" class="page-section hidden">
+        <p class="m-auto md:w-2/3">If you are seeing this you have js disabled.</p>
+      </section>
+    </main>
+  </body>
 
 </html>
