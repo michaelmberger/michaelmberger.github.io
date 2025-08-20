@@ -41,7 +41,7 @@ function populateSection(section, fileName) {
     fetch(new Request(fileName))
         .then((response) => {
             if (!response.ok) {
-                throw new Error(`HTTP error ${response.status}`);
+                throw new Error(`HTTP error, status = ${response.status}`);
             }
             return response.text();
         })
@@ -60,6 +60,12 @@ darkToggle.addEventListener('click', () => {
 navButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         const sectionId = btn.getAttribute('data-section');
+        navButtons.forEach((navButton) => {
+            if (navButton.getAttribute('data-section') != sectionId) {
+                navButton.classList.remove('text-white');
+            }
+        })
+        btn.classList.add('text-white');
         sections.forEach(section => {
             section.classList.toggle('hidden', section.id !== sectionId);
         });
