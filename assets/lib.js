@@ -8,9 +8,9 @@ const darkToggle = document.getElementById('darkToggle');
 const htmlEl = document.documentElement;
 const sunIcon = document.getElementById('sunIcon');
 const moonIcon = document.getElementById('moonIcon');
-const resumeFile = "content/resume.html";
-const projectFile = "content/projects.html"
-const businessFile = "content/business.html"
+const resumeFile = "/resume.html";
+const projectFile = "/projects.html"
+const businessFile = "/business.html"
 
 menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
