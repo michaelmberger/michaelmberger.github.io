@@ -12,6 +12,7 @@ const resumeFile = "/resume.html";
 const projectFile = "/projects.html"
 const businessFile = "/business.html"
 
+
 menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     menuOpen.classList.toggle('hidden');
